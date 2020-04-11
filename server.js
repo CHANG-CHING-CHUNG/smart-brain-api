@@ -33,9 +33,9 @@ app.use(express.json());
 
 db.select('*').from('users')
 .then(user => {
-  res.send(user);
   console.log(user);
-})
+}).catch(err => console.log(err));
+
 
 
 app.post('/getbox',getFace.handleGetFace(face))
