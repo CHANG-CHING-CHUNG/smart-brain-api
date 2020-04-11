@@ -20,10 +20,8 @@ const face = new Clarifai.App({
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-slippery-94327',
-    user : 'john127',
-    password : 'love0421',
-    database : 'smart-brain-data'
+    host : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
