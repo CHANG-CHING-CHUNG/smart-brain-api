@@ -31,6 +31,12 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
+db.select('*').from('users')
+.then(user => {
+  res.send(user);
+  console.log(user);
+})
+
 
 app.post('/getbox',getFace.handleGetFace(face))
 
