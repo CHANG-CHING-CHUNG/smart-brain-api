@@ -17,13 +17,13 @@ const face = new Clarifai.App({
 
 
 
-const db = knex({
-  client: 'pg',
-  connection: {
-    // connectionString : process.env.DATABASE_URL,
-    ssl: true
-  }
-});
+// const db = knex({
+//   client: 'pg',
+//   connection: {
+//     // connectionString : process.env.DATABASE_URL,
+//     ssl: true
+//   }
+// });
 
 
 const app = express();
@@ -31,33 +31,6 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
-const database = {
-  users: [
-    {
-      id:'123',
-      name:'John',
-      email:'kangan987@gmail.com',
-      password:'bestman',
-      entries:0,
-      joined: new Date()
-    },
-    {
-      id:'124',
-      name:'Chiu',
-      email:'Chiu@gmail.com',
-      password:'bestwoman',
-      entries:0,
-      joined: new Date()
-    }
-  ],
-  login: [
-    {
-      id:'987',
-      hash:'',
-      email:'john@gmail.com'
-    }
-  ]
-}
 
 app.post('/getbox',getFace.handleGetFace(face))
 
