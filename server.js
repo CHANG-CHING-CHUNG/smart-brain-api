@@ -19,8 +19,10 @@ const face = new Clarifai.App({
 
 const db = knex({
   client: 'pg',
-  connectionString : process.env.DATABASE_URL,
-  ssl: true
+  connection: {
+    connectionString : process.env.DATABASE_URL,
+    ssl: true
+  }
 });
 
 
