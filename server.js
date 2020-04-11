@@ -64,7 +64,8 @@ const database = {
 app.post('/getbox',getFace.handleGetFace(face))
 
 app.get('/', (req, res) => { 
-  getUsers.handleGetUsers(req, res, db)
+  // getUsers.handleGetUsers(req, res, db)
+  res.send('it is working');
 });
 
 app.post('/signin',signIn.handleSignIn(db, bcrypt)
